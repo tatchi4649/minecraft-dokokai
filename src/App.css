@@ -1,0 +1,1116 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "DotGothic16", sans-serif;
+
+  background-color: #111;
+
+  background-image:
+    linear-gradient(
+      45deg,
+      rgba(255,255,255,0.02) 25%,
+      transparent 25%
+    ),
+    linear-gradient(
+      -45deg,
+      rgba(255,255,255,0.02) 25%,
+      transparent 25%
+    );
+
+  background-size: 40px 40px;
+
+  color: white;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+
+/* ====================
+   Header
+==================== */
+
+.header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 70px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 0 6%;
+
+  background: rgba(0, 0, 0, 0.8);
+
+  z-index: 100;
+}
+
+.logo {
+  font-family: "Press Start 2P", "DotGothic16", sans-serif;
+
+  font-size: 14px;
+  font-weight: bold;
+
+  color: #ffffff;
+
+  text-shadow:
+    3px 3px 0 #000,
+    4px 4px 0 #333;
+}
+
+nav {
+  display: flex;
+  gap: 30px;
+}
+
+nav a {
+  font-size: 14px;
+  transition: 0.3s;
+}
+
+nav a:hover {
+  color: #7cff5b;
+}
+
+
+/* ====================
+   Hero
+==================== */
+
+.hero {
+  position: relative;
+  min-height: 100vh;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  text-align: center;
+
+  overflow: hidden;
+
+  padding: 100px 20px;
+}
+
+
+/* Minecraft風の空 */
+.minecraft-sky {
+  position: absolute;
+  inset: 0;
+
+  background:
+    linear-gradient(
+      rgba(0, 0, 0, 0.35),
+      rgba(0, 0, 0, 0.55)
+    ),
+    url("/images/2021-12-28_22.29.09.png");
+
+  background-size: cover;
+  background-position: center;
+
+  z-index: 0;
+}
+
+
+/* 地面 */
+.minecraft-sky::after {
+  content: "";
+
+  position: absolute;
+
+  left: 0;
+  right: 0;
+  bottom: 0;
+
+  height: 28%;
+
+  background:
+    linear-gradient(
+      to bottom,
+      #5c9e32 0px,
+      #5c9e32 45px,
+      #79552f 45px,
+      #79552f 100%
+    );
+
+  border-top: 8px solid #3f7f29;
+}
+
+
+/* 雲 */
+/*.minecraft-sky::before {
+  content: "";
+
+  position: absolute;
+
+  width: 220px;
+  height: 50px;
+
+  top: 20%;
+  left: 15%;
+
+  background: white;
+
+  box-shadow:
+    60px 0 white,
+    120px 0 white,
+    60px -25px white;
+
+  opacity: 0.8;
+}*/
+
+
+/* ヒーローの文字を背景より前に */
+.hero-content {
+  position: relative;
+  z-index: 2;
+
+  padding: 50px;
+}
+
+
+/* 文字を見やすくする */
+.hero h1 {
+  font-family: "Press Start 2P", "DotGothic16", sans-serif;
+
+  font-size: clamp(35px, 7vw, 90px);
+
+  color: white;
+
+  line-height: 1.5;
+
+  text-shadow:
+    6px 6px 0 #222,
+    10px 10px 0 rgba(0, 0, 0, 0.3);
+}
+
+.hero-text {
+  color: white;
+
+  text-shadow:
+    2px 2px 4px #000;
+}
+
+.youtube-button {
+  display: inline-block;
+
+  padding: 18px 30px;
+
+  background: #e53935;
+
+  border: 4px solid #8b1a1a;
+
+  color: white;
+
+  font-family: "DotGothic16", sans-serif;
+
+  font-weight: bold;
+
+  box-shadow:
+    5px 5px 0 #000;
+
+  transition: 0.15s;
+}
+
+.youtube-button:hover {
+  transform: translate(3px, 3px);
+
+  box-shadow:
+    2px 2px 0 #000;
+}
+
+
+/* ====================
+   Section
+==================== */
+
+.section {
+  max-width: 1200px;
+  margin: auto;
+  padding: 120px 30px;
+}
+
+.section-title {
+  margin-bottom: 50px;
+}
+
+.section-title h2 {
+  font-family: "Press Start 2P", "DotGothic16", sans-serif;
+
+  font-size: 32px;
+
+  line-height: 1.6;
+
+  text-shadow:
+    4px 4px 0 #000;
+}
+
+.section-title p {
+  font-family: "Press Start 2P", sans-serif;
+
+  color: #7cff5b;
+
+  letter-spacing: 2px;
+
+  font-size: 10px;
+
+  text-shadow:
+    2px 2px 0 #000;
+}
+
+
+/* ====================
+   Videos
+==================== */
+
+.video-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(3, 1fr);
+
+  gap: 25px;
+}
+
+.video-card {
+  background: #292929;
+
+  border: 4px solid #111;
+
+  box-shadow:
+    6px 6px 0 #000;
+
+  overflow: hidden;
+
+  transition: 0.15s;
+}
+
+.video-card:hover {
+  transform: translate(-3px, -3px);
+
+  box-shadow:
+    9px 9px 0 #000;
+}
+
+.youtube-container {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  background: black;
+}
+
+.youtube-container iframe {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+.video-link {
+  display: inline-block;
+  margin-top: 10px;
+  color: #7cff5b;
+  font-size: 14px;
+}
+
+.video-link:hover {
+  text-decoration: underline;
+}
+
+.video-info {
+  padding: 20px;
+}
+
+.video-date {
+  color: #888;
+  font-size: 13px;
+  margin-bottom: 10px;
+}
+
+.video-info h3 {
+  margin-bottom: 20px;
+}
+
+.video-info button {
+  background: none;
+  border: none;
+  color: #7cff5b;
+  cursor: pointer;
+}
+
+
+/* ====================
+   Members
+==================== */
+
+.members-section {
+  max-width: 1200px;
+}
+
+.member-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+}
+
+.member-card {
+  padding: 30px 20px;
+
+  text-align: center;
+
+  background: #292929;
+
+  border: 4px solid #111;
+
+  box-shadow:
+    6px 6px 0 #000;
+
+  transition: 0.15s;
+}
+
+.member-card:hover {
+  transform: translate(-4px, -4px);
+
+  box-shadow:
+    10px 10px 0 #000;
+}
+
+.member-card h3 {
+  font-family: "DotGothic16", sans-serif;
+
+  margin-bottom: 10px;
+}
+
+.member-icon {
+  font-size: 60px;
+  margin-bottom: 20px;
+}
+
+.member-card p {
+  color: #aaa;
+}
+
+/* スキン画像 */
+
+.skin-container {
+  width: 180px;
+  height: 220px;
+
+  margin: 0 auto 20px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background:
+    linear-gradient(
+      135deg,
+      #5c9e32,
+      #315c2b
+    );
+
+  border: 4px solid #111;
+
+  overflow: hidden;
+}
+
+.skin-container img {
+  width: 180px;
+  height: auto;
+
+  image-rendering: pixelated;
+
+  transition: 0.2s;
+}
+
+.member-card:hover .skin-container img {
+  transform: scale(1.08);
+}
+
+
+.member-card h3 {
+  font-family:
+    "DotGothic16",
+    sans-serif;
+
+  font-size: 22px;
+
+  margin-bottom: 10px;
+}
+
+
+.member-role {
+  color: #7cff5b;
+
+  margin-bottom: 15px;
+}
+
+
+.member-description {
+  color: #aaa;
+
+  line-height: 1.7;
+
+  font-size: 14px;
+
+  margin-bottom: 20px;
+}
+
+
+.profile-button {
+  padding: 10px 20px;
+
+  background: #555;
+
+  color: white;
+
+  border: 3px solid #222;
+
+  box-shadow:
+    3px 3px 0 #000;
+
+  font-family:
+    "DotGothic16",
+    sans-serif;
+
+  cursor: pointer;
+}
+
+.profile-button:hover {
+  transform: translate(2px, 2px);
+
+  box-shadow:
+    1px 1px 0 #000;
+}
+
+/* ====================
+   About
+==================== */
+
+.about {
+  padding: 120px 10%;
+
+  background: #202020;
+}
+
+.about > div {
+  max-width: 800px;
+  margin: auto;
+}
+
+.about > div > p:first-child {
+  color: #7cff5b;
+  letter-spacing: 4px;
+}
+
+.about h2 {
+  font-size: 45px;
+  margin: 20px 0 30px;
+}
+
+.about p {
+  line-height: 2;
+  color: #ccc;
+}
+
+
+/* ====================
+   Footer
+==================== */
+
+footer {
+  padding: 50px 20px;
+
+  text-align: center;
+
+  background: #080808;
+
+  color: #777;
+}
+
+footer p:first-child {
+  color: white;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+/* ====================
+   Profile Modal
+==================== */
+
+.profile-overlay {
+  position: fixed;
+
+  inset: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 20px;
+
+  background: rgba(0, 0, 0, 0.75);
+
+  z-index: 1000;
+}
+
+
+.profile-modal {
+  position: relative;
+
+  width: 900px;
+  max-width: 100%;
+
+  max-height: 90vh;
+
+  overflow-y: auto;
+
+  padding: 40px;
+
+  background: #292929;
+
+  border: 5px solid #111;
+
+  box-shadow:
+    10px 10px 0 #000;
+}
+
+
+/* タイトル */
+
+.profile-title {
+  font-family:
+    "Press Start 2P",
+    sans-serif;
+
+  color: #7cff5b;
+
+  font-size: 12px;
+
+  margin-bottom: 30px;
+
+  text-shadow:
+    2px 2px 0 #000;
+}
+
+
+/* 閉じるボタン */
+
+.profile-close {
+  position: absolute;
+
+  top: 15px;
+  right: 15px;
+
+  width: 40px;
+  height: 40px;
+
+  background: #8b1a1a;
+
+  color: white;
+
+  border: 3px solid #111;
+
+  font-size: 25px;
+
+  cursor: pointer;
+
+  box-shadow:
+    3px 3px 0 #000;
+}
+
+.profile-close:hover {
+  transform: translate(2px, 2px);
+
+  box-shadow:
+    1px 1px 0 #000;
+}
+
+
+/* プロフィール本体 */
+
+.profile-content {
+  display: grid;
+
+  grid-template-columns: 280px 1fr;
+
+  gap: 50px;
+
+  align-items: center;
+}
+
+
+/* スキン */
+
+.profile-image {
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  min-height: 300px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #5c9e32,
+      #315c2b
+    );
+
+  border: 4px solid #111;
+
+  overflow: hidden;
+}
+
+.profile-image img {
+  width: 250px;
+
+  image-rendering: pixelated;
+
+  transition: 0.2s;
+}
+
+.profile-image img:hover {
+  transform: scale(1.05);
+}
+
+
+/* 名前 */
+
+.profile-info h2 {
+  font-family:
+    "DotGothic16",
+    sans-serif;
+
+  font-size: 35px;
+
+  margin-bottom: 10px;
+}
+
+
+/* 役割 */
+
+.profile-role {
+  color: #7cff5b;
+
+  font-size: 18px;
+
+  margin-bottom: 25px;
+}
+
+
+/* 説明 */
+
+.profile-description {
+  color: #ccc;
+
+  line-height: 1.8;
+
+  margin-bottom: 30px;
+}
+
+
+/* 見出し */
+
+.profile-info h3 {
+  font-family:
+    "Press Start 2P",
+    sans-serif;
+
+  font-size: 11px;
+
+  margin-bottom: 15px;
+
+  color: white;
+}
+
+
+/* スキル */
+
+.skill-list {
+  display: flex;
+
+  flex-wrap: wrap;
+
+  gap: 10px;
+
+  margin-bottom: 30px;
+}
+
+.skill-list span {
+  padding: 8px 12px;
+
+  background: #555;
+
+  border: 2px solid #222;
+
+  box-shadow:
+    2px 2px 0 #000;
+
+  font-size: 13px;
+}
+
+
+/* 好きな企画 */
+
+.favorite-project {
+  color: #ddd;
+
+  margin-bottom: 20px;
+}
+
+
+/* CLOSE */
+
+.profile-close-button {
+  display: block;
+
+  margin: 35px auto 0;
+
+  padding: 12px 30px;
+
+  background: #555;
+
+  color: white;
+
+  border: 3px solid #111;
+
+  box-shadow:
+    4px 4px 0 #000;
+
+  font-family:
+    "DotGothic16",
+    sans-serif;
+
+  cursor: pointer;
+}
+
+.profile-close-button:hover {
+  transform: translate(2px, 2px);
+
+  box-shadow:
+    2px 2px 0 #000;
+}
+
+
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 30px;
+}
+
+.project-card {
+  background: #292929;
+  border: 4px solid #111;
+  box-shadow: 6px 6px 0 #000;
+  overflow: hidden;
+  cursor: pointer;
+  transition: 0.15s;
+}
+
+.project-card:hover {
+  transform: translate(-4px, -4px);
+  box-shadow: 10px 10px 0 #000;
+}
+
+.project-image {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  background: #111;
+}
+
+.project-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: 0.2s;
+}
+
+.project-card:hover .project-image img {
+  transform: scale(1.05);
+}
+
+.project-category {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+
+  padding: 8px 12px;
+
+  background: #111;
+  border: 2px solid #000;
+
+  color: #7cff5b;
+
+  font-family: "Press Start 2P", sans-serif;
+  font-size: 9px;
+}
+
+.project-info {
+  padding: 25px;
+}
+
+.project-date {
+  color: #888;
+  font-size: 13px;
+  margin-bottom: 10px;
+}
+
+.project-info h3 {
+  font-size: 25px;
+  margin-bottom: 15px;
+}
+
+.project-info > p:not(.project-date) {
+  color: #aaa;
+  line-height: 1.7;
+  font-size: 14px;
+  margin-bottom: 20px;
+}
+
+.project-button {
+  padding: 10px 20px;
+
+  background: #555;
+  color: white;
+
+  border: 3px solid #222;
+
+  box-shadow: 3px 3px 0 #000;
+
+  font-family: "DotGothic16", sans-serif;
+
+  cursor: pointer;
+}
+
+.project-button:hover {
+  transform: translate(2px, 2px);
+  box-shadow: 1px 1px 0 #000;
+}
+
+
+/* ====================
+   Project Modal
+==================== */
+
+.project-overlay {
+  position: fixed;
+  inset: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 20px;
+
+  background: rgba(0, 0, 0, 0.8);
+
+  z-index: 1000;
+}
+
+.project-modal {
+  position: relative;
+
+  width: 900px;
+  max-width: 100%;
+  max-height: 90vh;
+
+  overflow-y: auto;
+
+  background: #292929;
+
+  border: 5px solid #111;
+
+  box-shadow: 10px 10px 0 #000;
+}
+
+.project-modal-image {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+}
+
+.project-modal-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.project-modal-content {
+  padding: 35px;
+}
+
+.project-modal-category {
+  color: #7cff5b;
+
+  font-family: "Press Start 2P", sans-serif;
+
+  font-size: 10px;
+
+  margin-bottom: 15px;
+}
+
+.project-modal-content h2 {
+  font-size: 40px;
+  margin-bottom: 15px;
+}
+
+.project-modal-date {
+  color: #888;
+  margin-bottom: 25px;
+}
+
+.project-modal-description {
+  color: #ccc;
+  line-height: 2;
+  margin-bottom: 30px;
+}
+
+.project-modal-content h3 {
+  font-family: "Press Start 2P", sans-serif;
+  font-size: 11px;
+  margin-bottom: 15px;
+}
+
+.participant-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.participant-list span {
+  padding: 10px 15px;
+
+  background: #555;
+
+  border: 2px solid #222;
+
+  box-shadow: 2px 2px 0 #000;
+}
+
+.project-close {
+  position: absolute;
+
+  top: 15px;
+  right: 15px;
+
+  width: 40px;
+  height: 40px;
+
+  background: #8b1a1a;
+
+  color: white;
+
+  border: 3px solid #111;
+
+  font-size: 25px;
+
+  cursor: pointer;
+
+  z-index: 2;
+}
+
+.project-close-button {
+  display: block;
+
+  margin: 0 auto 30px;
+
+  padding: 12px 30px;
+
+  background: #555;
+
+  color: white;
+
+  border: 3px solid #111;
+
+  box-shadow: 4px 4px 0 #000;
+
+  font-family: "DotGothic16", sans-serif;
+
+  cursor: pointer;
+}
+
+/* ====================
+   Responsive
+==================== */
+
+@media (max-width: 800px) {
+
+  .header {
+    padding: 0 20px;
+  }
+
+  nav {
+    display: none;
+  }
+
+  .video-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .member-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .skin-container {
+    width: 160px;
+    height: 200px;
+  }
+
+  .section-title h2 {
+    font-size: 35px;
+  }
+
+  .about h2 {
+    font-size: 35px;
+  }
+
+  .profile-modal {
+    padding: 25px 20px;
+  }
+
+  .profile-content {
+    grid-template-columns: 1fr;
+
+    gap: 25px;
+  }
+
+  .profile-image {
+    min-height: 220px;
+  }
+
+  .profile-image img {
+    width: 180px;
+  }
+
+  .profile-info h2 {
+    font-size: 28px;
+  }
+
+  .project-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .project-modal-content {
+    padding: 25px 20px;
+  }
+
+  .project-modal-content h2 {
+    font-size: 30px;
+  }
+
+}
