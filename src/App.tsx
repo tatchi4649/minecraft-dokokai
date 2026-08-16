@@ -101,7 +101,7 @@ function App(){
       title: "マイクラ力テスト",
       category: "geme",
       image: "/images/maikuraryoku.jpg",
-      description: "",
+      description: "それぞれのマイクラ力を測定する企画",
       members: ["スタンド","サファイア","ネモラ","メガネ","and more..."],
       date: "2024.07"
     },
@@ -128,9 +128,9 @@ function App(){
         <nav>
           <a href="#home">Home</a>
           <a href="#videos">動画</a>
-          <a href="#menmbers">メンバー</a>
+          <a href="#members">メンバー</a>
           <a href="#projects">企画</a>
-          <a href="about">ABOUT</a>
+          <a href="#about">ABOUT</a>
         </nav>
       </header>
 
